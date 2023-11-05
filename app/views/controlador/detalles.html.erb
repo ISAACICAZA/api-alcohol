@@ -1,0 +1,20 @@
+<% if @detalle_trago %>
+  <h1><%= @detalle_trago['drinks'][0]['strDrink'] %></h1>
+  <img src="<%= @detalle_trago['drinks'][0]['strDrinkThumb'] %>" alt="Imagen del trago">
+
+  <ul>
+    <% @detalle_trago['drinks'][0].each do |key, value| %>
+      <% if key.start_with?('strIngredient') && value.present? %>
+        <% measure_key = "strMeasure#{key.split('strIngredient')[1]}" %>
+        <li><%= "#{value} - #{@detalle_trago['drinks'][0][measure_key]}" %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <p><%= @detalle_trago['drinks'][0]['strInstructions'] %></p>
+  <!-- Puedes mostrar otros detalles del trago según lo que necesites -->
+<% else %>
+  <p>No se encontró información para este trago.</p>
+<% end %>
+
+

@@ -1,8 +1,12 @@
-<% @cat.each do |nombre, imagen| %>
-    <p>nombre: <%= nombre %> </p>
-    <img src="<%= imagen %>" alt="">
+<ul>
+<% @cat.each do |nombre, imagen, id| %>
+    <li><%= link_to nombre, detalles_path(id_trago: id) %></li>
+    
+    <li> <p>nombre: <%= id %> </p></li>
+    <li><img src="<%= imagen %>" alt=""></li>
+    
 <% end %>
-
+</ul>
 strDrink
 idDrink
 strDrinkThumb
