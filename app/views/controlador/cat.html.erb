@@ -2,7 +2,7 @@
 <% @cat.each do |nombre, imagen, id| %>
     <li><%= link_to nombre, detalles_path(id_trago: id) %></li>
     
-    <li> <p>nombre: <%= id %> </p></li>
+
     <li><img src="<%= imagen %>" alt=""></li>
     
 <% end %>
