@@ -4,3 +4,32 @@ body
     background-repeat: no-repeat;
     background-size: cover;
 }
+/* Cambia la fuente y el tamaño del texto del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif; /* Cambia la fuente a Arial o cualquier fuente que prefieras */
+    font-size: 16px; /* Cambia el tamaño del texto a 16 píxeles o al tamaño deseado */
+}
+
+  /* Cambia el color del texto de los encabezados h1 */
+h1 {
+    color: #e7ecf1; /* Cambia el color del texto a azul (#007bff) o al color que prefieras */
+}
+
+  /* Cambia el estilo de las letras de los párrafos con la clase "emphasize" */
+.emphasize {
+    font-weight: bold; /* Hace que el texto sea negrita */
+    font-style: italic; /* Hace que el texto sea cursiva */
+    text-decoration: underline; /* Subraya el texto */
+    color: #FF0000; /* Cambia el color del texto a rojo (#FF0000) o al color que prefieras */
+}
+
+/*contenedores*/
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    color: var(--bs-list-group-color);
+    text-decoration: none;
+    background-color: #d1d1dd00;
+    border: var(--bs-list-group-border-width) solid #dee2e600;
+}

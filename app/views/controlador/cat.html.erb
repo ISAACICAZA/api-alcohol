@@ -1,9 +1,11 @@
-<ul>
-<% @cat.each do |nombre, imagen, id| %>
-    <li><%= link_to nombre, detalles_path(id_trago: id) %></li>
-    
+<div class="container">
+<div class="row">
+    <% @cat.each do |nombre, imagen, id| %>
+    <div class="col-md-6 mb-4">
+        <h4 class="text-white"><%= link_to nombre, detalles_path(id_trago: id) %></h4>
+        <img src="<%= imagen %>" alt="" style="max-width: 100%;">
+    </div>
+    <% end %>
+</div>
+</div>
 
-    <li><img src="<%= imagen %>" alt=""></li>
-    
-<% end %>
-</ul>
