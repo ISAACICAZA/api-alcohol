@@ -1,8 +1,10 @@
 body
 {
-    background-image: url("fondo.jpg");
+    background-image: url("fondoxd.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    backdrop-filter: blur(3px);
+    height: 100vh;
 }
 /* Cambia la fuente y el tamaño del texto del cuerpo de la página */
 body {
@@ -23,8 +25,16 @@ h1 {
     color: #FF0000; /* Cambia el color del texto a rojo (#FF0000) o al color que prefieras */
 }
 
+a
+{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+
 /*contenedores*/
-.list-group-item {
+li{
     position: relative;
     display: block;
     padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
@@ -32,4 +42,25 @@ h1 {
     text-decoration: none;
     background-color: #d1d1dd00;
     border: var(--bs-list-group-border-width) solid #dee2e600;
+}
+
+
+.contenido ul li:hover
+{
+    color: black;
+    background: #ff00cc;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+
+.detalle
+{
+    color: white;
+}
+
+.instrucciones
+{
+    color: white;
 }

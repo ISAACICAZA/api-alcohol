@@ -9,17 +9,19 @@
 <body>
 <nav class="navbar navbar-dark bg-primary">
     <div class="container">
-    <a class="navbar-brand" href="#">Paradise Cocktail Bar</a>
+    <a class="navbar-brand text-center" href="#">Paradise Cocktail Bar</a>
     </div>
 </nav>
 
-<div class="container text-center py-5">
+<div class="container text-center py-5" style="display: flex;justify-content: center;width: 100%;flex-direction: column;">
     <h1>Categorías</h1>
-    <ul class="list-group">
-    <% @categorias.each do |categoria| %>
-        <li class="list-group-item list-group-item-action"><%= link_to categoria, cat_path(categoria: categoria) %></li>
-    <% end %>
-    </ul>
+    <div class="contenido" style="display: flex;justify-content: center;width: 100%;">
+        <ul class="list-group text-center" style="width: 30%;">
+        <% @categorias.each do |categoria| %>
+            <li><%= link_to categoria, cat_path(categoria: categoria) %></li>
+        <% end %>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
