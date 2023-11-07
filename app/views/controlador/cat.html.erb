@@ -3,7 +3,7 @@
     <% @cat.each do |nombre, imagen, id| %>
     <div class="col-md-6 mb-4">
         <h4 class="text-white"><%= link_to nombre, detalles_path(id_trago: id) %></h4>
-        <img src="<%= imagen %>" alt="" style="max-width: 100%;">
+        <img src="<%= imagen %>" class="img-thumbnail"  alt=""  style="max-width: 100%;">
     </div>
     <% end %>
 </div>

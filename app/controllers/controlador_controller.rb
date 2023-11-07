@@ -24,9 +24,9 @@ class ControladorController < ApplicationController
         url = URI.parse("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=#{@categoria}")
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = (url.scheme == 'https')
-      
+    
         request = Net::HTTP::Get.new(url.request_uri)
-      
+    
         response = http.request(request)
 
         if response.code == '200'
@@ -44,11 +44,11 @@ class ControladorController < ApplicationController
         url = URI.parse("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?#{idioma}&i=#{id_t}")
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = (url.scheme == 'https')
-      
+    
         request = Net::HTTP::Get.new(url.request_uri)
-      
+    
         response = http.request(request)
-      
+    
         if response.code == '200'
             @detalle_trago = JSON.parse(response.body)
         else
