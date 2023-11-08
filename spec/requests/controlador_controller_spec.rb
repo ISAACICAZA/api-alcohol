@@ -10,4 +10,6 @@ RSpec.describe "ControladorControllers", type: :request do
     get "/cat", params: {categoria: "shake"}
     expect(response).to have_http_status(200)  
   end
+
+  
 end
