@@ -14,6 +14,14 @@ h1 {
 }
 
 
+  /* Cambia el color del texto de los encabezados h1 */
+h3 {
+    color: #e7ecf1; /* Cambia el color del texto a azul (#007bff) o al color que prefieras */
+}
+p{
+    color: white;
+}
+
 a
 {
     text-decoration: none;
@@ -31,6 +39,7 @@ li{
     text-decoration: none;
     background-color: #d1d1dd00;
     border: var(--bs-list-group-border-width) solid #dee2e600;
+    color: white;
 }
 
 

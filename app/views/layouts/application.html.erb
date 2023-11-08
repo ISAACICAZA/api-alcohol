@@ -13,6 +13,21 @@
   </head>
 
   <body>
+  <nav class="navbar" style="background-color: blue;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">inicio</a>
+    <li class="nav-item">
+    <a class="nav-link" href="#">paradise cocktail bar</a>
+    </li>
+    <%= form_tag(search_path, method: :get, class: "d-flex", role: "search") do %>
+      <div class="input-group">
+        <%= text_field_tag :name, params[:name], class: "form-control me-2", type: "search", placeholder: "Search", aria: { label: "Search" } %>
+        <button class="btn btn-danger" type="submit">Search</button>
+      </div>
+    <% end %>
+    
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

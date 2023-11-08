@@ -1,5 +1,7 @@
 class ControladorController < ApplicationController
     require 'net/http'
+    require 'json'
+
     def index
         url = URI.parse('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list&l=es')
         http = Net::HTTP.new(url.host, url.port)
@@ -56,4 +58,27 @@ class ControladorController < ApplicationController
             puts "Error al obtener datos. Código de respuesta: #{response.code}"
         end
     end
+
+    
+    def search
+        if params[:name].present?
+          @name = params[:name]
+          url = URI.parse("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=#{@name}")
+          http = Net::HTTP.new(url.host, url.port)
+          http.use_ssl = true if url.scheme == 'https'
+          request = Net::HTTP::Get.new(url)
+          response = http.request(request)
+    
+          if response.code == "200"
+            data = JSON.parse(response.body)
+            @cocteles = data["drinks"]
+          else
+            flash[:error] = "Error en la solicitud a la API"
+            @cocteles = []
+          end
+        else
+          flash[:error] = "Ingrese un nombre de cóctel para buscar"
+          @cocteles = []
+        end
+      end
 end

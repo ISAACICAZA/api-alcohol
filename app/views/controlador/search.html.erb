@@ -1,0 +1,28 @@
+
+
+<% if @cocteles.present? %>
+<h2 style="color:white;">Resultados:</h2>
+<div class="row">
+    <% @cocteles.each do |coctel| %>
+    <div class="col-md-6 mb-4">
+        <h3><%= coctel["strDrink"] %></h3>
+        <img src="<%= coctel["strDrinkThumb"] %>" class="img-thumbnail" alt="<%= coctel["strDrink"] %>" style="max-width: 100%;">
+        <p><%= coctel["strInstructions"] %></p>
+        <p>Ingredientes:</p>
+        <ul>
+        <% (1..15).each do |i| %>
+            <% ingredient = coctel["strIngredient#{i}"] %>
+            <% measure = coctel["strMeasure#{i}"] %>
+            <% if ingredient.present? && measure.present? %>
+            <li><%= "#{measure} #{ingredient}" %></li>
+            <% end %>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+</div>
+<% end %>
+
+<% if flash[:error] %>
+<p class="error"><%= flash[:error] %></p>
+<% end %>

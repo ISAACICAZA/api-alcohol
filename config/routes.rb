@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/cat", to: "controlador#cat"
   get "/detalles", to: "controlador#detalles"
   root 'controlador#index'
+  get '/search', to: "controlador#search"
   # Defines the root path route ("/")
   # root "posts#index"
 end
