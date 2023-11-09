@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe "Controlador", type: :controller do
+RSpec.describe "Controlador", type: :request do
   describe "GET #tra1" do
     it "return http success" do
       get "/tra1"
