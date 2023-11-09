@@ -15,6 +15,13 @@ class ControladorController < ApplicationController
             data = JSON.parse(response.body)
             @categorias = data['drinks'].map { |drink| drink['strCategory'] }
             # 'categorias' se convierte en una variable de instancia para que esté disponible en la vista
+
+            # Crear los registros para categorias, esta comentado por que solo es necesario una vez.
+            # @categorias.each do |cat|
+                # puts @categorias
+                # sql = "INSERT INTO catPuntuacion (nombre, created_at, updated_at) VALUES ('#{cat}', '#{Time.current}', '#{Time.current}')"
+                # ActiveRecord::Base.connection.execute(sql)
+           # end
         else
             # Manejar errores de solicitud aquí si es necesario
             puts "Error al obtener datos. Código de respuesta: #{response.code}"
@@ -34,6 +41,9 @@ class ControladorController < ApplicationController
         if response.code == '200'
             @dat = JSON.parse(response.body)
             @cat = @dat['drinks'].map { |drink| [drink['strDrink'], drink['strDrinkThumb'], drink['idDrink']] }
+
+            sql = "UPDATE catPuntuacion SET puntuacion = puntuacion + 1 WHERE nombre = '#{@categoria}'"
+            ActiveRecord::Base.connection.execute(sql)
         else
             # Manejar errores de solicitud aquí si es necesario
             puts "Error al obtener datos. Código de respuesta: #{response.code}"
