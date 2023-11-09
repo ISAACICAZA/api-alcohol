@@ -40,6 +40,9 @@ class ControladorController < ApplicationController
         end
     end
 
+    def tra1
+    end
+
     def detalles 
         id_t = params[:id_trago].to_s  
         idioma= "l=es"
